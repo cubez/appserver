@@ -1,10 +1,11 @@
 proxy:
   image: jwilder/nginx-proxy:latest
   ports:
-    - 80:80
+    - "80:80"
   volumes:
     - /var/run/docker.sock:/tmp/docker.sock:ro
-app:
+  restart: always
+app1:
   build: .
   environment:
-    VIRTUAL_HOST : app.dev
+    - VIRTUAL_HOST=test.dev
