@@ -1,6 +1,6 @@
 FROM justcontainers/base-alpine
 
-ENV BASE_PACKAGES  bash curl git vim
+ENV BASE_PACKAGES  fish curl
 ENV WEB_PACKAGES   nginx ca-certificates
 ENV PHP_PACKAGES   php-fpm php-cli php-json php-xml php-zlib \
                    php-curl php-pdo php-phar php-openssl \
@@ -17,10 +17,6 @@ RUN apk update && \
     
 # Copy configuration files to root
 COPY rootfs /
-
-# Shell fix
-RUN echo "/bin/bash" >> /etc/shells && \
-    sed -i -- 's/bin\/ash/bin\/bash/g' /etc/passwd
 
 # Fix permissions
 RUN chown -Rf nginx:www-data /app
