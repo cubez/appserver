@@ -1,6 +1,6 @@
 FROM justcontainers/base-alpine
 
-ENV BASE_PACKAGES  fish curl
+ENV BASE_PACKAGES  bash curl
 ENV WEB_PACKAGES   nginx ca-certificates
 ENV PHP_PACKAGES   php-fpm php-cli php-json php-xml php-zlib \
                    php-curl php-pdo php-phar php-openssl \
