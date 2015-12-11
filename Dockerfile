@@ -4,7 +4,7 @@ ENV BASE_PACKAGES  bash curl
 ENV WEB_PACKAGES   nginx ca-certificates
 ENV PHP_PACKAGES   php-fpm php-cli php-json php-xml php-zlib \
                    php-curl php-pdo php-phar php-openssl \
-                   php-pdo_mysql php-mysqli php-dom \
+                   php-pdo_mysql php-mysqli php-mysql php-dom \
                    php-gd php-iconv php-mcrypt php-ctype
                   
 # Install packages
