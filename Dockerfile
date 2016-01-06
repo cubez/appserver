@@ -15,7 +15,8 @@ RUN apk --no-cache add $PACKAGES
 COPY rootfs /
 
 # Fix permissions
-RUN chown -Rf nginx:www-data /app
+RUN chown -Rf nginx:www-data /app && \
+    chown -Rf nginx:www-data /var/lib/nginx
 
 # Define mountable directories
 VOLUME ["/app", "/etc/nginx/certs"]
