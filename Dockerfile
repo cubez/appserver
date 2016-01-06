@@ -1,21 +1,17 @@
-FROM justcontainers/base-alpine
+FROM cubez/base
+MAINTAINER cubez <cubez@cubez.nl>
 
-ENV BASE_PACKAGES  bash curl
-ENV WEB_PACKAGES   nginx ca-certificates
-ENV PHP_PACKAGES   php-fpm php-cli php-json php-xml php-zlib \
-                   php-curl php-pdo php-phar php-openssl \
-                   php-pdo_mysql php-mysqli php-mysql php-dom \
-                   php-gd php-iconv php-mcrypt php-ctype
+# Variables
+ENV PACKAGES  nginx ca-certificates \
+              php-fpm php-cli php-json php-xml php-zlib \
+              php-curl php-pdo php-phar php-openssl \
+              php-pdo_mysql php-mysqli php-mysql php-dom \
+              php-gd php-iconv php-mcrypt php-ctype php-zip
                   
 # Install packages
-RUN apk update && \
-    apk upgrade && \
-    apk add $BASE_PACKAGES && \
-    apk add $WEB_PACKAGES && \
-    apk add $PHP_PACKAGES && \
-    rm -rf /var/cache/apk/*
+RUN apk --no-cache add $PACKAGES
     
-# Copy configuration files to root
+# Copy root files
 COPY rootfs /
 
 # Fix permissions
