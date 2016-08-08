@@ -4,7 +4,7 @@ MAINTAINER cubez <cubez@cubez.nl>
 # Variables
 ENV PACKAGES  nginx ca-certificates \
               php-fpm php-cli php-json php-xml php-zlib \
-              php-curl php-pdo php-phar php-openssl \
+              php-curl php-pdo php-phar php-openssl php-soap \
               php-pdo_mysql php-mysqli php-mysql php-dom \
               php-gd php-iconv php-mcrypt php-ctype php-zip
                   
